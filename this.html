@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // console.log(this);  //window
+    // 去解决调用者
+    // function add() {
+    //     console.log(this); //window
+    // }
+    // add()
+    // let a = {
+    //     name: 'lt',
+    //     add: function () {
+    //         console.log(this.name);//指向a对象
+    //     }
+    // }
+    // a.add()
+
+    //改变this指向
+
+    let a = {
+        name1: '1231',
+        add: function () {
+            setTimeout(() => {
+                console.log(this.name1);
+            }, 1);
+        }
+    }
+    let b = a.add;
+    b.apply(a)
+
+
+
+
+
+</script>
+
+</html>
