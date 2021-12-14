@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.创建对象的方式
+    // 1.1早期的创建方式
+    let obj1 = new Object();
+    obj1.name = '1231'
+    console.log(obj1);
+    // 1.2字面量定义
+    let obj2 = {
+        name: '123'
+    }
+    Object.defineProperty(obj2, 'name', {
+        writable: false,
+        value: '444'
+    })
+    obj2.name = '555';
+
+    console.log(obj2);
+
+    // 2.对象的方法
+    // 2.1对象的合并 assign
+    let obj3 = { name1: "333" }
+    let obj4 = { name2: "55" }
+    console.log(Object.assign(obj3, obj4, obj1));
+    // 2.2 Object.is()
+
+
+    // 2.3对象结构
+
+
+
+
+    // 问题：
+    // 1.思考VUE中解构的运用场景
+    
+</script>
+
+</html>

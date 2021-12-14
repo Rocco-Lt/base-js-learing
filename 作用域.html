@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // 全局作用域 函数作用域 块级作用域
+
+
+
+
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            console.log('i', i);
+        }, 1);
+    }
+    for (var i = 0; i < 10; i++) {
+        setTimeout(() => {
+            console.log('i', i);
+        }, 1);
+    }
+
+
+
+    // 自由变量：当前作用域中没有对应的变量 
+
+    var x = 10
+    function fn() {
+        console.log(x)
+    }
+    function show(f) {
+        var x = 20;
+        (function () {
+            f() //10，而不是20
+        })()
+    }
+    show(fn)
+    // 在fn函数中，取自由变量x的值时，要到哪个作用域中取？——要到创建fn函数的那个作用域中取，无论fn函数将在哪里调用。
+
+    var a = 10
+    function fn() {
+        var b = 20
+        function bar() {
+            console.log(a + b) //30
+        }
+        return bar
+    }
+    var x = fn(),
+        b = 200
+    x() //bar()
+    // 作用域和执行上下文之间最大的区别是： 执行上下文在运行时确定，随时可能改变；作用域在定义时就确定，并且不会改变。
+
+</script>
+
+</html>

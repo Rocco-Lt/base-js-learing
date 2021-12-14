@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //什么是执行上下文；
+    // 简而言之，执行上下文是评估和执行 JavaScript 代码的环境的抽象概念。
+    // 每当 Javascript 代码在运行的时候，它都是在执行上下文中运行。
+
+
+
+    // 执行上下文的类型
+    // 1.全局执行上下文
+    // 不再函数内部的代码都在全局上下文中。执行两件事情：
+    //     1.创建全局对象（window浏览器环境下）
+    //     2.设置this的值等于这个全局对象
+    // 2.函数上下文
+    // 当一个函数被创建的时候，都会为该函数创建上下文
+
+    // 这是一个压栈出栈的过程--执行上下文栈
+    let a = 10, fn, // 1、进入全局上下文环境
+        bar = function (x) {
+            let b = 5
+            fn(x + b) // 3、进入fn函数上下文环境
+
+        }
+    fn = function (y) {
+        let c = 5
+        console.log(y + c)
+
+    }
+
+    bar(10) // 2、进入bar函数上下文环境
+
+
+
+
+</script>
+
+</html>
