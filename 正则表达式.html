@@ -10,17 +10,21 @@
 
 <body>
 
-
-
-
-
 </body>
+
 <script>
 
+    //其实正则表达式是一个对象
+    // let reg = new RegExp("CHINA")
+    // let reg1 = /CHINA/
+    // console.log(reg);
+    // console.log(reg1);
 
 
-
-
+    // 1横向匹配
+    let reg = /ab{2}c/g;
+    let a = 'abbc';
+    console.log(reg.test(a));
 
 
 

@@ -29,16 +29,20 @@
 
     //改变this指向
 
-    let a = {
-        name1: '1231',
-        add: function () {
-            setTimeout(() => {
-                console.log(this.name1);
-            }, 1);
-        }
+    var doSth = function (name) {
+        console.log(this);
+        console.log(name);
     }
-    let b = a.add;
-    b.apply(a)
+    doSth.call(2, '若川'); // Number{2}, '若川'
+    doSth.call(null,'123')
+    var doSth2 = function (name) {
+        'use strict';
+        console.log(this);
+        console.log(name);
+    }
+    doSth2.call(2, '若川'); // 2, '若川'
+
+
 
 
 
