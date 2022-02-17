@@ -17,8 +17,24 @@
 </body>
 <script>
 
+    //首先看看promise是什么
+    console.log(Promise);
+    // Promise 是一个构造函数
 
+    // 用法：
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(1)
+        }, 1000);
+    })
+    promise.then(res => {
+        console.log(res);
+        return 3
+    }).then(res => {
+        console.log('2', res);
+    })
 
+    console.log(Promise.resolve('p'));
 
 
 

@@ -13,37 +13,30 @@
 </body>
 <script>
 
-    // console.log(this);  //window
-    // 去解决调用者
-    // function add() {
-    //     console.log(this); //window
-    // }
-    // add()
-    // let a = {
-    //     name: 'lt',
-    //     add: function () {
-    //         console.log(this.name);//指向a对象
-    //     }
-    // }
-    // a.add()
 
-    //改变this指向
 
-    var doSth = function (name) {
+    //  调用者是谁
+
+    fuc1 = function () {
         console.log(this);
-        console.log(name);
     }
-    doSth.call(2, '若川'); // Number{2}, '若川'
-    doSth.call(null,'123')
-    var doSth2 = function (name) {
-        'use strict';
-        console.log(this);
-        console.log(name);
+
+    fuc1();//window
+
+    let obj = {
+        fuc1: function () {
+            console.log(this);
+        }
     }
-    doSth2.call(2, '若川'); // 2, '若川'
+    obj.fuc1();//指向的是obj
+
+    //  new 操作符指向的是对应的实例化对象
 
 
-
+    // 改变this指向问题 call apply bind
+    // fun.call(thisArg, param1, param2, ...)  
+    // fun.apply(thisArg, [param1, param2, ...])
+    // fun.bind(thisArg, param1, param2, ...)
 
 
 

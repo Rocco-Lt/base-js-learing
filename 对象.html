@@ -12,6 +12,14 @@
 
 </body>
 <script>
+
+    let obj = {}
+    Object.defineProperty(obj, 'name', {
+        value: "1231"
+    })
+    console.log(obj);
+    obj
+
     // 1.创建对象的方式
     // 1.1早期的创建方式
     let obj1 = new Object();
@@ -31,9 +39,9 @@
 
     // 2.对象的方法
     // 2.1对象的合并 assign
-    let obj3 = { name1: "333" }
-    let obj4 = { name2: "55" }
-    console.log(Object.assign(obj3, obj4, obj1));
+    // let obj3 = { name1: "333" }
+    // let obj4 = { name2: "55" }
+    // console.log(Object.assign(obj3, obj4, obj1));
     // 2.2 Object.is()
 
 
@@ -44,7 +52,7 @@
 
     // 问题：
     // 1.思考VUE中解构的运用场景
-    
+
 </script>
 
 </html>
