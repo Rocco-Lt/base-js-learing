@@ -13,6 +13,19 @@
 </body>
 <script>
 
+    // this的取值取决于其调用者
+    // 首先箭头函数
+
+    const obj = {
+        a: function () { console.log(this) },
+        b: {
+            c: () => { console.log(this) }
+        }
+    }
+    obj.a()   //没有使用箭头函数打出的是obj
+    obj.b.c()  //打出的是window对象！！
+
+
     // console.log(this);  //window
     // 去解决调用者
     // function add() {
@@ -29,18 +42,18 @@
 
     //改变this指向
 
-    var doSth = function (name) {
-        console.log(this);
-        console.log(name);
-    }
-    doSth.call(2, '若川'); // Number{2}, '若川'
-    doSth.call(null,'123')
-    var doSth2 = function (name) {
-        'use strict';
-        console.log(this);
-        console.log(name);
-    }
-    doSth2.call(2, '若川'); // 2, '若川'
+    // var doSth = function (name) {
+    //     console.log(this);
+    //     console.log(name);
+    // }
+    // doSth.call(2, '若川'); // Number{2}, '若川'
+    // doSth.call(null,'123')
+    // var doSth2 = function (name) {
+    //     'use strict';
+    //     console.log(this);
+    //     console.log(name);
+    // }
+    // doSth2.call(2, '若川'); // 2, '若川'
 
 
 

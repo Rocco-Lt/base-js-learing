@@ -27,20 +27,30 @@
     // 当一个函数被创建的时候，都会为该函数创建上下文
 
     // 这是一个压栈出栈的过程--执行上下文栈
-    let a = 10, fn, // 1、进入全局上下文环境
-        bar = function (x) {
-            let b = 5
-            fn(x + b) // 3、进入fn函数上下文环境
+    // let a = 10, fn, // 1、进入全局上下文环境
+    //     bar = function (x) {
+    //         let b = 5
+    //         fn(x + b) // 3、进入fn函数上下文环境
 
-        }
-    fn = function (y) {
-        let c = 5
-        console.log(y + c)
+    //     }
+    // fn = function (y) {
+    //     let c = 5
+    //     console.log(y + c)
+
+    // }
+
+    // bar(10) // 2、进入bar函数上下文环境
+
+
+    for (var index = 0; index < 5; index++) {
+
+        setTimeout((j) => {
+            console.log(new Date(), j);
+        }, 1000, index)
 
     }
 
-    bar(10) // 2、进入bar函数上下文环境
-
+    console.log(new Date(), index);
 
 
 
