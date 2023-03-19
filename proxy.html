@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let people = {
+            name: 'lt'
+        }
+
+        let c = new Proxy(people, {
+            get: () => {
+                console.log('获取值了');
+            },
+            set: () => {
+                console.log('设置值了');
+
+            }
+        })
+        c.age = '18'
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-23 20:15:39
+ * @LastEditTime: 2022-04-20 23:17:03
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /base-js-learing/call_apply_bind.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,23 +20,70 @@
 
 </body>
 <script>
-    "use strict";
-    var foo = 1;
-    var bar = 2;
 
-    function myFunc() {
-        //-- define local-to-function variables
-        var a = 1;
-        var b = 2;
-        var foo = 3;
+    // bind方法
 
-        console.log("inside myFunc");
-    }
+    var a = {
+    b: function() { 
+            
+      var func = function() {
+        console.log(this.c);
+      }
+      func();
+    },
+    c: 'hello'
+  }
+//   a.b(); 
+//   console.log(a.c); 
 
-    console.log("outside");
 
-    //-- and then, call it:
-    myFunc();
+    // function mountState<S>(
+    //     initialState: (() => S) | S,
+    // ): [S, Dispatch<BasicStateAction<S>>] {
+    //     const hook = mountWorkInProgressHook();
+    //     if (typeof initialState === 'function') {
+    //         // $FlowFixMe: Flow doesn't like mixed types
+    //         initialState = initialState();
+    //     }
+
+    //     hook.memoizedState = hook.baseState = initialState;
+    //     const queue = (hook.queue = {
+    //         pending: null,
+    //         dispatch: null,
+    //         lastRenderedReducer: basicStateReducer,
+    //         lastRenderedState: (initialState: any),
+    //     });
+
+    //     const dispatch: Dispatch<
+    //         BasicStateAction<S>,
+    //         > = (queue.dispatch = (dispatchAction.bind(
+    //             null,
+    //             currentlyRenderingFiber,
+    //             queue,
+    //         ): any));
+
+    //     return [hook.memoizedState, dispatch];
+    // }
+    
+
+
+    // "use strict";
+    // var foo = 1;
+    // var bar = 2;
+
+    // function myFunc() {
+    //     //-- define local-to-function variables
+    //     var a = 1;
+    //     var b = 2;
+    //     var foo = 3;
+
+    //     console.log("inside myFunc");
+    // }
+
+    // console.log("outside");
+
+    // //-- and then, call it:
+    // myFunc();
 
 
 </script>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: rocco.liu 2863433495@qq.com
+ * @Date: 2022-02-17 23:05:52
+ * @LastEditors: rocco.liu 2863433495@qq.com
+ * @LastEditTime: 2022-07-26 22:15:50
+ * @FilePath: /base-js-learing/宏观任务和微观任务.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,40 +22,52 @@
 
 
 <script>
-    console.log(1)
-    setTimeout(function () {
-
-        console.log(2)
-    }, 0);
-    const intervalId = setInterval(function () {
-
-        console.log(3)
-    }, 0)
-    setTimeout(function () {
-        console.log(10)
-        new Promise(function (resolve) {
-
-            console.log(11)
-            resolve()
-        })
-            .then(function () {
-                console.log(12)
-            })
-            .then(function () {
-                console.log(13)
-                clearInterval(intervalId)
-            })
-    }, 0);
+    //宏任务：
+    // 微任务：
+    console.log(1);
+    new Promise((resolve, rejec) => {
+        console.log(2);
+    })
+    setTimeout(() => {
+        console.log(3);
+    }, 100);
+    console.log(4);
 
 
-    Promise.resolve()
-        .then(function () {
-            console.log(7)
-        })
-        .then(function () {
-            console.log(8)
-        })
-    console.log(9)
+    // console.log(1)
+    // setTimeout(function () {
+
+    //     console.log(2)
+    // }, 0);
+    // const intervalId = setInterval(function () {
+
+    //     console.log(3)
+    // }, 0)
+    // setTimeout(function () {
+    //     console.log(10)
+    //     new Promise(function (resolve) {
+
+    //         console.log(11)
+    //         resolve()
+    //     })
+    //         .then(function () {
+    //             console.log(12)
+    //         })
+    //         .then(function () {
+    //             console.log(13)
+    //             clearInterval(intervalId)
+    //         })
+    // }, 0);
+
+
+    // Promise.resolve()
+    //     .then(function () {
+    //         console.log(7)
+    //     })
+    //     .then(function () {
+    //         console.log(8)
+    //     })
+    // console.log(9)
 
 
 

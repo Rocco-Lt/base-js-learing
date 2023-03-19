@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-17 23:05:52
+ * @LastEditTime: 2022-04-03 20:47:07
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /base-js-learing/async_await.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +22,141 @@
 
 <script>
 
-    
+
+
+
+    // async函数异步编程的一种方式。其内部集合了generator函数，自带执行器
+    //声明一个异步函数，且内部用return返回
+
+    // async function fuc1() {
+    //     return 'async'
+    // }
+
+    // async function fuc1() {
+    //     'async'
+    // }
+
+
+    //上面代码类似于下方代码
+    // let fuc2 = new Promise((resolve) => {
+    //     resolve('Promise')
+    // })
+    // console.log(fuc1());
+
+    // 总结：
+    //    1.async 中有return值：相当于Promise.resolve('值')
+    //   2.async 中不写retrun值：如果async函数没有返回值 async函数返回一个undefined的promise对象
+
+
+    // await
+    // async function fuc1() {
+    //     await console.log(3);
+    // }
+
+    // async function test() {
+    //     return new Promise((resolve) => {
+    //         setTimeout(() => {
+    //             resolve('test 1000');
+    //         }, 1000);
+    //     })
+    // }
+    // function fn() {
+    //     return 'fn';
+    // }
+
+    // async function next() {
+    //     let res0 = await fn(),
+    //         res1 = await test(),
+    //         res2 = await fn();
+    //     console.log(res0);
+    //     console.log(res1);
+    //     console.log(res2);
+    // }
+    // next(); // 1s 后才打印出结果 为什么呢 就是因为 res1在等待promise的结果 阻塞了后面代码。
+
+
+
+
+
+
+
+    // async function async1() {
+    //     console.log('1');
+    //     await async2();
+    //     console.log('2');
+    // }
+    // async function async2() {
+    //     console.log('3');
+    // }
+    // console.log('4')
+    // setTimeout(function () {
+    //     console.log('5')
+    // }, 0);
+
+    // async1();
+
+    // new Promise(function (resolve) {
+    //     console.log('6');
+    //     resolve();
+    // }).then(function () {
+    //     console.log('7')
+    // });
+    // console.log('8')
+
+    //4  1 3 6  8  2 7 5
+
+
+
+
+    // async function async1() {
+    //     console.log("async1 start");
+    //     await async2();
+    //     console.log("async1 end");
+    // }
+    // async function async2() {
+    //     console.log('async2');
+    // }
+    // console.log("script start");
+    // setTimeout(function () {
+    //     console.log("settimeout");
+    // }, 0);
+    // async1();
+    // new Promise(function (resolve) {
+    //     console.log("promise1");
+    //     resolve();
+    // }).then(function () {
+    //     console.log("promise2");
+    // });
+    // console.log('script end');
+
+
+    // console.log('script start')
+    // async function async1() {
+    //     await async2()
+    //     console.log('async1 end')
+    // }
+    // async function async2() {
+    //     console.log('async2 end')
+    // }
+    // async1()
+    // console.log(333);
+    // setTimeout(function () {
+    //     console.log('setTimeout')
+    // }, 0)
+    // new Promise(resolve => {
+    //     console.log('Promise')
+    //     resolve()
+    // })
+    //     .then(function () {
+    //         console.log('Promise1')
+    //     })
+
+// script start => async2 end => Promise => async1 end => Promise1 => setTimeout
+
+
+
+
+
 </script>
 
 </html>

@@ -1,0 +1,79 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-02 14:39:58
+ * @LastEditTime: 2022-04-02 15:04:27
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /base-js-learing/event_loop.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log('script start'); //1
+        // setTimeout(function () {
+        //     console.log('setTimeout'); //5
+        // }, 0);
+        // Promise.resolve().then(function () {
+        //     console.log('promise1');  //3
+        // }).then(function () {
+        //     console.log('promise2');  //4
+        // });
+        // console.log('script end'); //2
+
+
+
+        // console.log('script start')
+        // async function async1() {
+        //     await async2()
+        //     console.log('async1 end')
+        // }
+        // async function async2() {
+        //     console.log('async2 end')
+        // }
+        // async1()
+        // setTimeout(function () {
+        //     console.log('setTimeout')
+        // }, 0)
+
+        // new Promise(resolve => {
+        //     console.log('Promise')
+        //     resolve()
+        // })
+        //     .then(function () {
+        //         console.log('promise1')
+        //     })
+        //     .then(function () {
+        //         console.log('promise2')
+        //     })
+
+        // console.log('script end')
+
+
+
+        async function async1() {
+            console.log(1);
+            await async2()
+            // console.log('async1 end')
+        }
+
+        async function async2() {
+            console.log('async2 end')
+        }
+        async1()
+        console.log(3);
+
+
+
+    </script>
+</body>
+
+</html>

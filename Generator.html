@@ -12,15 +12,22 @@
     Generator
 </body>
 <script>
-    function* myGenerator() {
-        yield console.log(1);
-        yield console.log(2);
-        return '3'
-    }
-    const gen = myGenerator();  // 获取迭代器
-    gen.next()
-    gen.next()
-    console.log(gen);
+    // function* myGenerator() {
+    //     yield console.log(1);
+    //     yield console.log(2);
+    //     return '3'
+    // }
+    // const gen = myGenerator();  // 获取迭代器
+    // gen.next()
+    // gen.next()
+    // console.log(gen);
+
+    const array = [1, 2, 3, 4, 5]
+    console.log(array.reduce((a, b) => {
+        console.log(a);
+        console.log(b);
+        return a + b
+    }));
 
 </script>
 

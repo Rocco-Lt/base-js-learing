@@ -13,37 +13,47 @@
 </body>
 <script>
 
-    function Perosn() {
-        this.name = '22';
-    }
+    // constructor函数本省就是一个构造器，就是一个方法而已
+    /* class Person {
+        constructor(x, y) {
+            this.name = x;
+            this.age = y
 
-    let info = new Perosn()
-    console.log(info);
-
-
-    class Person1 {
-        constructor() {
-            this.age = 33
+        }
+        sat() {
+            console.log(33);
         }
     }
-    let info1 = new Person1()
-    console.log(info1);
-
-    class Point {
-        constructor() {
-            // ...
+    let lt = new Person('lt', 15)
+    console.log(lt);
+    console.log(lt instanceof Person);
+    console.log(lt.constructor === Person);
+    console.log(typeof lt.constructor); */
+    class Logger {
+        printName(name = 'there') {
+            console.log(this);
         }
 
-        toString() {
-            // ...
-        }
-
-        toValue() {
-            // ...
+        print(text) {
+            console.log(text);
         }
     }
 
-    console.log(Point.prototype);
+    const logger = new Logger();
+    logger.printName()
+    const { printName } = logger;
+    printName();
+
+    //
+
+
+
+
 </script>
+
+
+
+
+
 
 </html>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-02-27 20:20:17
+ * @LastEditTime: 2022-04-21 16:14:52
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /base-js-learing/this.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,63 +17,26 @@
 </head>
 
 <body>
+    <script>
+        /**
+         * 理解：
+         * 1.this 永远指向最后调用它的那个对象
+        */
+
+        // function func1() {
+        //     console.log(this); //window
+        // }
+        // func1()
+
+        let obj = {
+            func1: function () {
+                console.log(this);
+            }
+        }
+        obj.func1()
+
+    </script>
 
 </body>
-<script>
-
-    // this的取值取决于其调用者
-    // 首先箭头函数
-
-    const obj = {
-        a: function () { console.log(this) },
-        b: {
-            c: () => { console.log(this) }
-        }
-    }
-    obj.a()   //没有使用箭头函数打出的是obj
-    obj.b.c()  //打出的是window对象！！
-
-
-    // console.log(this);  //window
-    // 去解决调用者
-    // function add() {
-    //     console.log(this); //window
-    // }
-    // add()
-    // let a = {
-    //     name: 'lt',
-    //     add: function () {
-    //         console.log(this.name);//指向a对象
-    //     }
-    // }
-    // a.add()
-
-    //改变this指向
-
-    // var doSth = function (name) {
-    //     console.log(this);
-    //     console.log(name);
-    // }
-    // doSth.call(2, '若川'); // Number{2}, '若川'
-    // doSth.call(null,'123')
-    // var doSth2 = function (name) {
-    //     'use strict';
-    //     console.log(this);
-    //     console.log(name);
-    // }
-    // doSth2.call(2, '若川'); // 2, '若川'
-
-    //  new 操作符指向的是对应的实例化对象
-
-
-    // 改变this指向问题 call apply bind
-    // fun.call(thisArg, param1, param2, ...)  
-    // fun.apply(thisArg, [param1, param2, ...])
-    // fun.bind(thisArg, param1, param2, ...)
-
-
-
-
-</script>
 
 </html>
