@@ -21,7 +21,7 @@
         /**
          * 理解：
          * 1.this 永远指向最后调用它的那个对象
-        */
+         */
 
         // function func1() {
         //     console.log(this); //window
@@ -29,12 +29,11 @@
         // func1()
 
         let obj = {
-            func1: function () {
+            func1: function() {
                 console.log(this);
             }
         }
         obj.func1()
-
     </script>
 
 </body>

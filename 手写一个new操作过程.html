@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    function Person(name) {
+        this.name = name;
+
+    }
+
+    function newObj(Fuc, ...arg) {
+        const newObj = {};
+        newObj.__proto__ = Fuc.prototype;
+        console.log(newObj);
+        const result = Fuc.apply(newObj, arg);
+        return newObj;
+    }
+    console.log(newObj(Person, '444'));
+</script>
+
+</html>

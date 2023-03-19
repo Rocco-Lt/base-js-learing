@@ -24,36 +24,35 @@
 <script>
     //宏任务：
     // 微任务：
-    console.log(1);
-    new Promise((resolve, rejec) => {
-        console.log(2);
-    })
-    setTimeout(() => {
-        console.log(3);
-    }, 100);
-    console.log(4);
+    // console.log(1);
+    // new Promise((resolve, rejec) => {
+    //     console.log(2);
+    // })
+    // setTimeout(() => {
+    //     console.log(3);
+    // }, 100);
+    // console.log(4);
 
 
-    // console.log(1)
-    // setTimeout(function () {
-
-    //     console.log(2)
+    // console.log(1) //同步任务
+    // setTimeout(function() {
+    //     console.log(2) //宏任务
     // }, 0);
-    // const intervalId = setInterval(function () {
+    // const intervalId = setInterval(function() {
+    //     console.log(3) //宏任务
+    // }, 1110)
 
-    //     console.log(3)
-    // }, 0)
-    // setTimeout(function () {
+
+    // setTimeout(function() { //宏任务 2
     //     console.log(10)
-    //     new Promise(function (resolve) {
-
-    //         console.log(11)
-    //         resolve()
-    //     })
-    //         .then(function () {
+    //     new Promise(function(resolve) {
+    //             console.log(11)
+    //             resolve()
+    //         })
+    //         .then(function() {
     //             console.log(12)
     //         })
-    //         .then(function () {
+    //         .then(function() {
     //             console.log(13)
     //             clearInterval(intervalId)
     //         })
@@ -61,16 +60,13 @@
 
 
     // Promise.resolve()
-    //     .then(function () {
+    //     .then(function() {
     //         console.log(7)
     //     })
-    //     .then(function () {
+    //     .then(function() {
     //         console.log(8)
     //     })
     // console.log(9)
-
-
-
 </script>
 
 </html>
