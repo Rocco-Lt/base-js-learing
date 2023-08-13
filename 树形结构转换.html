@@ -1,9 +1,9 @@
 <!--
  * @Author: rocco.liu 2863433495@qq.com
- * @Date: 2023-03-21 13:27:15
+ * @Date: 2023-05-07 12:39:24
  * @LastEditors: rocco.liu 2863433495@qq.com
- * @LastEditTime: 2023-06-19 17:08:18
- * @FilePath: /base-js-learing/es6中对象的扩展.html
+ * @LastEditTime: 2023-05-07 12:44:34
+ * @FilePath: /base-js-learing/树形结构转换.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
@@ -17,20 +17,27 @@
 </head>
 
 <body>
+    <script>
+        let arr = [{
+            id: 1,
+            pid: 0,
+            name: 'body'
+        }, {
+            id: 2,
+            pid: 1,
+            name: 'title'
+        }, {
+            id: 3,
+            pid: 2,
+            name: 'div'
+        }]
 
+
+        function changeTree(params) {
+            
+
+        }
+    </script>
 </body>
-<script>
-    //属性简写
-    const baz = '1231';
-    const foo = { baz }
-    const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';
-    console.log(stripHtml('asdasda<p></p>'));
-
-    let newFuc = function () {
-        this.name = '123'
-    }
-    console.log(new newFuc());
-
-</script>
 
 </html>

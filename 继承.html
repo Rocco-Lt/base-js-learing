@@ -1,3 +1,11 @@
+<!--
+ * @Author: rocco.liu 2863433495@qq.com
+ * @Date: 2023-03-21 13:27:15
+ * @LastEditors: rocco.liu 2863433495@qq.com
+ * @LastEditTime: 2023-08-13 22:26:23
+ * @FilePath: /base-js-learing/继承.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,24 +20,82 @@
 
 </body>
 <script>
-    // 继承方式：
-    // 1.原型链继承
-    function Parent() {
-        this.name = 'lt'
-        this.info = {
 
+    //1.原型链继承
+    // function Person() {
+    //     this.name = 'nameInfo';
+    //     this.age = 13;
+    // }
+    // Person.prototype.sayHello = function () {
+    //     console.log('say hello');
+    // }
+
+    // function Student() {
+    //     this.number = 1
+    // }
+    // Student.prototype = new Person();
+
+    // let lt = new Student();
+    // lt.age = 44
+    // console.log(lt.age);
+    // let yy = new Student()
+    // console.log(yy.age);
+
+    // 缺陷：
+    // 如果继承的属性是引用类型会导致数据被更改
+
+    // 2.原型式继承
+    //  特点：
+    //  通过一个空对象作为中介，将继承的对象挂在在空对象构造函数的原型上
+
+    // function jichenObj(obj) {
+    //     function Fn() { }
+    //     Fn.prototype = obj;
+    //     return new Fn()
+    // }
+    // Object.create()
+
+    // 3.构造函数继承
+
+    function Parent() {
+        this.info = {
+            name: "yhd",
+            age: 19,
         }
     }
 
-    Parent.prototype.say = function() {
-        console.log('say hello word');
+    Parent.prototype.say = function () {
+        console.log(333);
     }
 
     function Child() {
-
+        console.log(this);
+        Parent.call(this)
+        console.log(this);
     }
-    Child.prototype = new Parent();
-    console.log(new Child())
+
+    let child1 = new Child();
+
+    //child1.info.gender = "男";
+    //console.log(child1.info); // {name: "yhd", age: 19, gender: "男"};
+
+   // let child2 = new Child();
+   // console.log(child2.info); // {name: "yhd", age: 19}
+
+//    优点：可以在子类构造函数中向父类传参数
+//         父类的引用属性不会被共享
+//    缺点：无法访问父类的原型上的方法
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 </html>

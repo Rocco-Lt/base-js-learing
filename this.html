@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-27 20:20:17
- * @LastEditTime: 2022-04-21 16:14:52
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2023-08-09 21:22:29
+ * @LastEditors: rocco.liu 2863433495@qq.com
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /base-js-learing/this.html
 -->
@@ -18,22 +18,30 @@
 
 <body>
     <script>
-        /**
-         * 理解：
-         * 1.this 永远指向最后调用它的那个对象
-         */
+        // let a = 1;
+        // const b = 2;
+        // var c = 3;
+        // function print(params) {
+        //     console.log(this.a);
+        //     console.log(this.b);
+        //     console.log(this.c);
 
-        // function func1() {
-        //     console.log(this); //window
         // }
-        // func1()
+        // print()
 
-        let obj = {
-            func1: function() {
-                console.log(this);
-            }
-        }
-        obj.func1()
+        // a = 1;
+        // function foo() {
+        //     console.log(this);
+        //     console.log(this.a);
+        // }
+        // const obj = {
+        //     a: 10,
+        //     bar() {
+        //         foo(); // 1
+        //     }
+        // }
+        // obj.bar();
+
     </script>
 
 </body>

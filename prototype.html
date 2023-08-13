@@ -26,9 +26,16 @@
         console.log(4444);
 
     }
+
     // 在原型上创建方法，可以只浪费一次内存
     let perpo1 = new Person('liutao', 32)
     let perpo2 = new Person('yangyang', 31)
+    // 测试instance
+    console.log('instanceof', perpo1 instanceof Person);
+    console.log('instanceofObj', perpo1 instanceof Object);
+    console.log(perpo1.__proto__ === Person);
+
+    // -----------------
     console.log(perpo1.say === perpo2.say);
     console.log(perpo1.sayHello === perpo2.sayHello);
     // 看看构造函数的原型
@@ -51,7 +58,7 @@
     let obj = {};
     console.log(obj.constructor);
     console.log(obj.__proto__);
-  
+
 </script>
 
 </html>

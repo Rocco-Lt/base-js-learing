@@ -1,3 +1,11 @@
+<!--
+ * @Author: rocco.liu 2863433495@qq.com
+ * @Date: 2023-03-21 13:27:15
+ * @LastEditors: rocco.liu 2863433495@qq.com
+ * @LastEditTime: 2023-03-22 00:44:05
+ * @FilePath: /base-js-learing/Generator.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,22 +20,34 @@
     Generator
 </body>
 <script>
-    // function* myGenerator() {
-    //     yield console.log(1);
-    //     yield console.log(2);
-    //     return '3'
-    // }
+    function* myGenerator() {
+        console.log(33);
+        yield console.log(1);
+        yield console.log(2);
+        return '3'
+    }
+    console.log(myGenerator());
     // const gen = myGenerator();  // 获取迭代器
     // gen.next()
     // gen.next()
     // console.log(gen);
 
-    const array = [1, 2, 3, 4, 5]
-    console.log(array.reduce((a, b) => {
-        console.log(a);
-        console.log(b);
-        return a + b
-    }));
+    function* inter() { //generator函数
+
+    }
+
+    /*  let g = inter();//返回一个遍历器对象
+     console.log(g);
+     console.log(typeof g);
+     console.log(g[Symbol.iterator]() === g); */
+
+     //原生对象不具备inrerat接口
+    let a = { name: '1', age: '3' }
+    for (const iterator of a) {
+        console.log(iterator);
+    }
+
+
 
 </script>
 

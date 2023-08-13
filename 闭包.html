@@ -1,9 +1,9 @@
 <!--
  * @Author: rocco.liu 2863433495@qq.com
- * @Date: 2023-03-21 13:27:15
+ * @Date: 2023-03-21 13:28:12
  * @LastEditors: rocco.liu 2863433495@qq.com
- * @LastEditTime: 2023-06-19 17:08:18
- * @FilePath: /base-js-learing/es6中对象的扩展.html
+ * @LastEditTime: 2023-03-21 23:40:48
+ * @FilePath: /base-js-learing/闭包.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <!DOCTYPE html>
@@ -20,17 +20,31 @@
 
 </body>
 <script>
-    //属性简写
-    const baz = '1231';
-    const foo = { baz }
-    const stripHtml = html => (new DOMParser().parseFromString(html, 'text/html')).body.textContent || '';
-    console.log(stripHtml('asdasda<p></p>'));
+    //什么是闭包
 
-    let newFuc = function () {
-        this.name = '123'
+    function name(x) {
+        var b = 1;
+        return b
     }
-    console.log(new newFuc());
+    console.log(name());
 
+    var a = 0
+    function foo() {
+        var b = 14
+        function fo() {
+            console.log(a, b)
+        }
+        fo()
+    }
+    foo()
+
+    for (var i = 0; i < 10; i++) {
+        (function (j) {
+            setTimeout(function () {
+                console.log(j)
+            }, 1000)
+        })(i)
+    }
 </script>
 
 </html>
